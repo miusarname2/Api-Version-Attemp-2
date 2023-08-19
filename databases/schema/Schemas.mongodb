@@ -1,0 +1,47 @@
+use("ejercicio-rappi");
+
+db.createCollection("deliveryPartners", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      additionalProperties: false,
+      required: ["name", "phoneNumber", "vehicleType", "availability", "completedOrders"],
+      properties: {
+        _id: { bsonType: "objectId" },
+        name: { bsonType: "string", description: "name is required" },
+        phoneNumber: { bsonType: "string", description: "phoneNumber is required" },
+        vehicleType: { bsonType: "string", description: "vehicleType is required" },
+        availability: { bsonType: "bool", description: "availability is required" },
+        completedOrders: { bsonType: "int", description: "completedOrders is required" },
+      }
+    }
+  }
+});
+
+db.createCollection("restaurants", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      additionalProperties: false,
+      required: ["name", "cuisine", "address", "menuItems"],
+      properties: {
+        _id: { bsonType: "objectId" },
+        name: { bsonType: "string", description: "name is required" },
+        cuisine: { bsonType: "string", description: "cuisine is required" },
+        address: { bsonType: "string", description: "address is required" },
+        menuItems: {
+          bsonType: "array",
+          description: "menuItems is required and should be an array of objects",
+          items: {
+            bsonType: "object",
+            required: ["name", "price"],
+            properties: {
+              name: { bsonType: "string", description: "name is required" },
+              price: { bsonType: "decimal", description: "price is required" },
+            }
+          }
+        },
+      }
+    }
+  }
+});
