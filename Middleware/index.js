@@ -1,13 +1,12 @@
-import { Router } from "express";
+import express,{ Router } from "express";
 import morgan from "morgan";
+import { restaurants } from "./restaurants.js";
 
-const index = Router();
+export const index = Router();
 
 //Middlewares
-index.use(morgan("dev"));
-index.use(express.json());
+index.use(morgan("dev"))
+index.use(express.json())
 
 //Routes
-index.get("/", (req, res) => {
-  res.send("hgol");
-});
+index.use("/restaurants",restaurants) 
