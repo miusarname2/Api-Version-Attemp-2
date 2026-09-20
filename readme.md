@@ -2,7 +2,7 @@
 
 Este repositorio proporciona versiones de API de muestra utilizando varias técnicas: encabezados, parámetros y cadenas de consulta en el contexto de una aplicación Express.js. Su propósito es mostrar cómo administrar el control de versiones de API de una manera clara y organizada. Las versiones de la API son fundamentales para mantener la compatibilidad con versiones anteriores cuando se introducen nuevas funciones o se realizan cambios en la API.
 
-### Repositorio: [miusarname/Api-Version-Attemp-2](https://github.com/myusarname/Api-Version-Attemp-2)
+### Repositorio: [miusarname2/Api-Version-Attemp-2](https://github.com/miusarname2/Api-Version-Attemp-2)
 
 ### Tecnología de control de versiones API en Express.js
 
